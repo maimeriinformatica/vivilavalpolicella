@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="img/sigillo.jpg">
+<meta property="og:title" content="Vivi la Valpolicella · 30 anni">
+<meta property="og:description" content="Associazione culturale per lo sviluppo, la tutela e la promozione della Valpolicella. Dal 1996.">
+<meta property="og:image" content="img/portale-vite.jpg">
+<meta property="og:type" content="website">
+<title>Vivi la Valpolicella</title>
+<meta name="description" content="Associazione culturale per lo sviluppo, la tutela e la promozione della Valpolicella. Fondata nel 1996 dal prof. Francesco Quintarelli.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --paper:#EDEEE7;       /* verde-grigio foglia, lato inferiore */
+  --surface:#F8F8F3;
+  --plate:#FBFAF6;       /* "etichetta" chiara che ospita il logo in entrambi i temi */
+  --ink:#1F1B17;
+  --ink-soft:#4E4A42;
+  --muted:#6F6B61;
+  --line:#D5D5CA;
+  --amarone:#7A1E2C;
+  --amarone-soft:#F1E3E3;
+  --vine:#55632F;
+  --vine-soft:#E2E6D2;
+  --gold:#9C7630;
+  --on-accent:#FFFFFF;
+  --shadow:0 1px 2px rgba(31,27,23,.06),0 8px 24px rgba(31,27,23,.07);
+  --display:"Cinzel","Trajan Pro",Georgia,"Times New Roman",serif;
+  --serif:"Cormorant Garamond",Garamond,Georgia,serif;
+  --sans:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --wrap:1180px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#171512;--surface:#211E1A;--plate:#F3F1EA;
+    --ink:#EEE9E0;--ink-soft:#CFC8BB;--muted:#A39C8F;--line:#37322B;
+    --amarone:#D7707F;--amarone-soft:#3A2126;--vine:#A9BA72;--vine-soft:#2A3020;--gold:#D4B067;
+    --on-accent:#1A1512;--shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#171512;--surface:#211E1A;--plate:#F3F1EA;
+  --ink:#EEE9E0;--ink-soft:#CFC8BB;--muted:#A39C8F;--line:#37322B;
+  --amarone:#D7707F;--amarone-soft:#3A2126;--vine:#A9BA72;--vine-soft:#2A3020;--gold:#D4B067;
+  --on-accent:#1A1512;--shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--amarone);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amarone);outline-offset:3px;border-radius:3px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:clamp(16px,4vw,40px)}
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:.02em;line-height:1.15;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.7rem,3.4vw,2.5rem)}
+h3{font-size:1.12rem;letter-spacing:.04em}
+p{margin:0}
+.eyebrow{font-family:var(--display);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--amarone);font-weight:600}
+.lead{font-family:var(--serif);font-style:italic;font-size:clamp(1.25rem,2.2vw,1.55rem);line-height:1.4;color:var(--ink-soft)}
+.prose{max-width:64ch;display:grid;gap:1em;color:var(--ink-soft)}
+.section{padding-block:clamp(56px,8vw,104px)}
+.section-head{display:grid;gap:14px;margin-bottom:clamp(28px,4vw,48px);max-width:760px}
+.todo{border:1.5px dashed var(--gold);color:var(--gold);border-radius:6px;padding:2px 8px;font-size:.88em;background:transparent}
+
+/* ---------- header ---------- */
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--plate);border-bottom:1px solid #DDD9CE;color:#1F1B17}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img.wm{height:38px;width:auto}
+.brand img.seal{height:46px;width:auto}
+.nav{display:flex;gap:4px;align-items:center}
+.nav a{white-space:nowrap;font-family:var(--display);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:#3B362F;padding:8px 10px;border-radius:4px;font-weight:600}
+.nav a:hover{color:#7A1E2C;background:#F1E3E3}
+.nav a.cta{background:#7A1E2C;color:#fff;margin-left:6px}
+.nav a.cta:hover{background:#5E1521;color:#fff}
+.menu-btn{display:none;background:none;border:1px solid #CFCABD;border-radius:6px;padding:8px 12px;font:600 .8rem var(--sans);color:#1F1B17;cursor:pointer}
+@media (max-width:1180px){
+  .menu-btn{display:block}
+  .nav{position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;background:var(--plate);border-bottom:1px solid #DDD9CE;padding:8px 16px 16px;display:none}
+  .nav.open{display:flex}
+  .nav a{padding:12px 8px;border-bottom:1px solid #EAE6DC}
+  .nav a.cta{margin:8px 0 0;text-align:center}
+}
+@media (max-width:520px){.brand img.wm{height:26px}.brand img.seal{height:36px}}
+
+/* ---------- hero ---------- */
+.hero{background:var(--plate);color:#1F1B17;border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,5vw,64px);align-items:center;padding-block:clamp(36px,6vw,72px)}
+.hero-logo{width:min(100%,560px);height:auto}
+.hero-copy{display:grid;gap:22px}
+.hero h1{font-size:clamp(2rem,4.6vw,3.35rem);color:#1F1B17}
+.hero h1 em{font-family:var(--serif);font-style:italic;font-weight:500;color:#7A1E2C;letter-spacing:0;font-size:1.12em}
+.hero .lead{color:#4E4A42}
+.anniv{display:flex;align-items:baseline;gap:16px;font-family:var(--display);color:#7A1E2C}
+.anniv .yrs{font-size:clamp(3rem,7vw,5.2rem);font-weight:700;line-height:.9}
+.anniv .lbl{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:#4E4A42;line-height:1.5}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 .95rem var(--sans);padding:12px 20px;border-radius:999px;text-decoration:none;border:1.5px solid transparent;cursor:pointer}
+.btn.primary{background:#7A1E2C;color:#fff}
+.btn.primary:hover{background:#5E1521}
+.btn.ghost{border-color:#1F1B17;color:#1F1B17;background:transparent}
+.btn.ghost:hover{background:#1F1B17;color:#fff}
+.hero-figure{position:relative;margin:0}
+.hero-figure img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px;max-height:600px}
+.hero-figure figcaption{position:absolute;left:14px;bottom:14px;background:rgba(251,250,246,.92);font-size:.78rem;padding:6px 10px;border-radius:3px;color:#3B362F}
+.comuni{border-top:1px solid #E1DDD2}
+.comuni .wrap{padding-block:18px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;font-size:.86rem;color:#4E4A42}
+.comuni strong{font-family:var(--display);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#55632F;margin-right:6px}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero-figure img{aspect-ratio:16/11}}
+
+/* ---------- season band ---------- */
+.season{position:relative;height:clamp(200px,34vw,420px);overflow:hidden;background:#222}
+.season img{width:100%;height:100%!important;object-fit:cover}
+.season .cap{position:absolute;left:0;right:0;bottom:0;padding:18px 0;background:linear-gradient(transparent,rgba(15,12,10,.72))}
+.season .cap .wrap{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;color:#F5F1E8}
+.season .s-name{font-family:var(--display);letter-spacing:.24em;text-transform:uppercase;font-size:.85rem}
+.season .s-desc{font-family:var(--serif);font-style:italic;font-size:1.2rem}
+.season .s-cr{font-size:.72rem;opacity:.8}
+
+/* ---------- chi siamo ---------- */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,64px);align-items:start}
+.quote{margin:0;background:var(--surface);border:1px solid var(--line);padding:28px;border-radius:4px;display:grid;gap:14px}
+.quote blockquote{margin:0;font-family:var(--serif);font-style:italic;font-size:1.5rem;line-height:1.35;color:var(--ink)}
+.quote figcaption{font-size:.88rem;color:var(--muted)}
+.people{display:grid;gap:0;margin-top:20px;border-top:1px solid var(--line)}
+.people div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.95rem;flex-wrap:wrap}
+.people dt{color:var(--muted)}
+.people dd{margin:0;font-weight:600;text-align:right}
+.values{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:clamp(40px,6vw,72px);border-top:2px solid var(--ink)}
+.value{padding:22px 22px 8px 0;display:grid;gap:10px;align-content:start}
+.value + .value{padding-left:22px;border-left:1px solid var(--line)}
+.value .v-word{font-family:var(--display);font-size:1.35rem;color:var(--amarone);font-weight:600}
+.value p{font-size:.95rem;color:var(--ink-soft)}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr}.values{grid-template-columns:1fr 1fr}.value:nth-child(3){padding-left:0;border-left:0}.value{border-top:1px solid var(--line)}}
+@media (max-width:520px){.values{grid-template-columns:1fr}.value,.value + .value{padding-left:0;border-left:0}}
+
+/* timeline */
+.timeline{margin-top:clamp(40px,6vw,72px);position:relative}
+.timeline h3{margin-bottom:22px}
+.tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0;border-top:1px solid var(--line)}
+.tl li{position:relative;padding:26px 18px 0 0}
+.tl li::before{content:"";position:absolute;top:-6px;left:0;width:11px;height:11px;border-radius:50%;background:var(--paper);border:2px solid var(--vine)}
+.tl li.key::before{background:var(--amarone);border-color:var(--amarone)}
+.tl .y{font-family:var(--display);font-weight:700;font-size:1.35rem;color:var(--ink);font-variant-numeric:tabular-nums}
+.tl .d{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.tl p{font-size:.92rem;color:var(--ink-soft)}
+@media (max-width:620px){.tl{grid-template-columns:1fr;border-top:0;border-left:1px solid var(--line);padding-left:18px}.tl li{padding:0 0 22px}.tl li::before{top:8px;left:-24px}}
+
+/* ---------- iniziative ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.chip{font:600 .86rem var(--sans);border:1.5px solid var(--line);background:var(--surface);color:var(--ink-soft);padding:8px 14px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
+.card .img{aspect-ratio:16/10;overflow:hidden;background:var(--vine-soft);display:grid;place-items:center}
+.card .img img{width:100%;height:100%;object-fit:cover}
+.card .img.logo img{object-fit:contain;width:70%;height:70%;background:#fff;padding:10px;border-radius:4px}
+.card .body{padding:18px 18px 20px;display:grid;gap:8px;align-content:start;flex:1}
+.tag{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--vine)}
+.card h3{font-size:1.02rem}
+.card p{font-size:.92rem;color:var(--ink-soft)}
+.card .who{font-size:.84rem;color:var(--muted);border-top:1px solid var(--line);padding-top:10px;margin-top:auto}
+.card.link{cursor:pointer}
+.card.link:hover{border-color:var(--amarone)}
+
+/* ---------- premio ---------- */
+.premio{background:var(--surface);border-block:1px solid var(--line)}
+.premio-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,64px);align-items:start}
+.premio-cover{margin:0;display:grid;gap:10px}
+.premio-cover img{border:1px solid var(--line);cursor:zoom-in}
+.premio-cover figcaption{font-size:.82rem;color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-block:1px solid var(--line);margin:26px 0}
+.fact{padding:18px 14px 18px 0}
+.fact + .fact{padding-left:16px;border-left:1px solid var(--line)}
+.fact .n{font-family:var(--display);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:var(--amarone);font-variant-numeric:tabular-nums;line-height:1.1}
+.fact .l{font-size:.84rem;color:var(--muted)}
+.ambiti{list-style:none;padding:0;margin:0 0 26px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ambiti li{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:12px 14px;font-size:.93rem;display:flex;gap:10px;align-items:start}
+.ambiti li b{font-family:var(--display);color:var(--vine);font-size:1rem}
+.credits{font-size:.9rem;color:var(--ink-soft);display:grid;gap:6px}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:clamp(36px,5vw,56px)}
+.gallery figure{margin:0;display:grid;gap:6px}
+.gallery img{aspect-ratio:3/4;object-fit:cover;width:100%;cursor:zoom-in;border-radius:2px}
+.gallery figcaption{font-size:.8rem;color:var(--muted);line-height:1.35}
+.convegno{margin-top:clamp(36px,5vw,56px);display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:clamp(18px,3vw,28px)}
+.convegno img{cursor:zoom-in;border-radius:2px}
+@media (max-width:900px){.premio-grid,.convegno{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.ambiti{grid-template-columns:1fr}}
+@media (max-width:520px){.facts{grid-template-columns:1fr}.fact + .fact{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+
+/* ---------- pubblicazioni ---------- */
+.pub-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,56px);align-items:start}
+.map-fig{margin:0;display:grid;gap:10px}
+.map-fig img{border:1px solid var(--line);cursor:zoom-in;background:#fff}
+.map-fig figcaption{font-size:.84rem;color:var(--muted)}
+.pub-list{display:grid;gap:18px}
+.pub{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:start;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.pub img{width:96px;height:120px;object-fit:cover;border-radius:2px;cursor:zoom-in}
+.pub h3{font-size:1rem;margin-bottom:4px}
+.pub p{font-size:.92rem;color:var(--ink-soft)}
+.press{margin-top:10px}
+.press h3{margin-bottom:12px}
+@media (max-width:900px){.pub-grid{grid-template-columns:1fr}}
+
+/* ---------- imagines ---------- */
+.imagines{background:#1C1916;color:#EEE9E0}
+.imagines .eyebrow{color:#D4B067}
+.imagines .prose{color:#CFC8BB}
+.imagines .lead{color:#E6DECF}
+.im-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,56px);align-items:start}
+.im-photos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.im-photos img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;cursor:zoom-in;border-radius:2px}
+.im-photos img.wide{grid-column:1/-1;aspect-ratio:16/9}
+.im-team{margin-top:8px;border-top:1px solid #3A342D;padding-top:16px;font-size:.92rem;color:#CFC8BB;display:grid;gap:6px}
+.im-team b{color:#EEE9E0;font-weight:600}
+.rr{background:#111;border-radius:4px;padding:10px;width:220px}
+@media (max-width:900px){.im-grid{grid-template-columns:1fr}}
+
+/* ---------- futuro ---------- */
+.proj{counter-reset:p;list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+.proj li{counter-increment:p;display:grid;grid-template-columns:44px 1fr;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.proj li::before{content:counter(p);font-family:var(--display);font-size:1.4rem;font-weight:700;color:var(--amarone);line-height:1.2}
+.proj h3{font-size:.98rem;margin-bottom:4px}
+.proj p{font-size:.9rem;color:var(--ink-soft)}
+.proj .rel{font-size:.8rem;color:var(--muted);margin-top:4px}
+.rete{margin-top:clamp(48px,6vw,80px);display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,56px);align-items:start}
+.partners{display:flex;flex-wrap:wrap;gap:8px}
+.partners span{font-size:.86rem;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;color:var(--ink-soft)}
+.partners span.main{border-color:var(--vine);color:var(--vine);font-weight:600}
+.patrocini{margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:4px;padding:10px}
+@media (max-width:900px){.proj{grid-template-columns:1fr}.rete{grid-template-columns:1fr}}
+
+/* ---------- sostieni + contatti ---------- */
+.support{background:var(--vine-soft);border-block:1px solid var(--line)}
+.support .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,4vw,48px);align-items:center;padding-block:clamp(40px,6vw,64px)}
+.copyrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.copyrow code{font:600 .95rem ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.03em;user-select:all;word-break:break-all;flex:1;min-width:0}
+.copybtn{font:600 .8rem var(--sans);border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:4px;padding:6px 10px;cursor:pointer}
+.copybtn:hover{border-color:var(--amarone)}
+@media (max-width:820px){.support .wrap{grid-template-columns:1fr}}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,56px);align-items:start}
+.addr{display:grid;gap:22px}
+.addr .blk{display:grid;gap:4px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.addr .k{font-family:var(--display);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--vine);font-weight:600}
+.addr .v{font-size:1rem}
+.addr .v small{color:var(--muted);font-size:.88rem}
+.sel{user-select:all}
+form{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:clamp(18px,3vw,28px);display:grid;gap:14px}
+label{font-size:.84rem;font-weight:600;color:var(--ink-soft);display:grid;gap:6px}
+input,select,textarea{font:inherit;font-size:.98rem;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:10px 12px;width:100%}
+textarea{min-height:130px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--amarone);outline-offset:0;border-color:transparent}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-note{font-size:.84rem;color:var(--muted)}
+.form-out{font-size:.9rem;background:var(--vine-soft);border-radius:4px;padding:12px}
+@media (max-width:820px){.contact-grid{grid-template-columns:1fr}}
+@media (max-width:480px){.form-row{grid-template-columns:1fr}}
+
+/* ---------- footer ---------- */
+footer{background:#1C1916;color:#CFC8BB;font-size:.88rem}
+footer .wrap{padding-block:40px;display:grid;gap:22px}
+footer .top{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer .fplate{background:#F3F1EA;border-radius:4px;padding:10px 14px}
+footer .fplate img{height:34px;width:auto}
+footer .fine{border-top:1px solid #3A342D;padding-top:16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#A39C8F;font-size:.8rem}
+footer a{color:#E6DECF}
+
+/* ---------- lightbox ---------- */
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(96vw,1400px);max-height:94vh}
+dialog.lb::backdrop{background:rgba(12,10,8,.88)}
+dialog.lb img{max-height:86vh;width:auto;margin:auto;border-radius:2px}
+dialog.lb .lb-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#EEE9E0;padding:10px 2px 0;font-size:.88rem}
+dialog.lb button{background:#EEE9E0;color:#1F1B17;border:0;border-radius:999px;padding:8px 14px;font:600 .85rem var(--sans);cursor:pointer}
+</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Vivi la Valpolicella, torna all'inizio">
+      <img class="seal" src="img/sigillo.jpg" alt="" width="270" height="295">
+      <img class="wm" src="img/logo-wordmark.png" alt="Vivi la Valpolicella" width="1816" height="283">
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Sezioni">
+      <a href="#chi-siamo">Chi siamo</a>
+      <a href="#iniziative">Iniziative</a>
+      <a href="#premio">Premio di Laurea</a>
+      <a href="#pubblicazioni">Pubblicazioni</a>
+      <a href="#imagines">Imagines</a>
+      <a href="#futuro">Il futuro</a>
+      <a class="cta" href="#contatti">Contatti</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="h-hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="eyebrow">Associazione culturale · dal 1996</p>
+      <h1 id="h-hero">Trent'anni di <em>passione</em> per la Valpolicella</h1>
+      <p class="lead">Per lo sviluppo, la tutela e la promozione di una terra che non è solo vino: storia, paesaggio, arte, ricerca e le persone che la abitano.</p>
+      <div class="anniv" aria-label="Anniversario 1996–2026">
+        <span class="yrs">30</span>
+        <span class="lbl">anni<br>1996 — 2026</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn primary" href="#iniziative">Scopri le iniziative</a>
+        <a class="btn ghost" href="#premio">Premio Tesi di Laurea</a>
+      </div>
+    </div>
+    <figure class="hero-figure">
+      <img src="img/portale-vite.jpg" alt="Un portale in pietra avvolto dalla vite americana rossa d'autunno, in Valpolicella" width="1600" height="1072">
+      <figcaption>Foto © Damolgraf Editore</figcaption>
+    </figure>
+  </div>
+  <div class="comuni">
+    <div class="wrap">
+      <strong>I nostri 8 comuni</strong>
+      <span>Dolcè</span><span>Fumane</span><span>Marano di Valpolicella</span><span>Negrar di Valpolicella</span><span>Pescantina</span><span>San Pietro in Cariano</span><span>Sant'Ambrogio di Valpolicella</span><span>Sant'Anna d'Alfaedo</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHI SIAMO ============ -->
+<section class="section" id="chi-siamo" aria-labelledby="h-chi">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <div class="section-head">
+          <p class="eyebrow">1996 · L'idea e la fondazione</p>
+          <h2 id="h-chi">Una comunità che si prende cura del proprio territorio</h2>
+        </div>
+        <div class="prose">
+          <p>L'associazione <strong>Vivi la Valpolicella</strong> è nata nel 1996 su iniziativa di un gruppo di cittadini e operatori economici degli otto comuni di Dolcè, Fumane, Marano di Valpolicella, Negrar di Valpolicella, Pescantina, San Pietro in Cariano, Sant'Ambrogio di Valpolicella e Sant'Anna d'Alfaedo.</p>
+          <p>A guidarla, fin dal primo giorno, il <strong>prof. Francesco Quintarelli</strong>: la sua passione per il territorio e per la viti-enologia è ancora oggi la bussola dell'associazione. Nel tempo quella idea è diventata una rete di premi, concorsi, mostre, convegni e pubblicazioni che coinvolge università, cantine, istituzioni e artisti.</p>
+          <p>L'obiettivo è rimasto lo stesso: far conoscere e valorizzare storia, bellezze, cultura e prodotti di questa valle dei poeti e degli artisti, terra di Emilio Salgari.</p>
+        </div>
+        <dl class="people" aria-label="Organi dell'associazione">
+          <div><dt>Fondatore</dt><dd>Prof. Francesco Quintarelli</dd></div>
+          <div><dt>Presidente</dt><dd>Gianfranco Damoli</dd></div>
+          <div><dt>Vicepresidente</dt><dd>Dott. Silvano Zampini</dd></div>
+          <div><dt>Soci fondatori</dt><dd><span class="todo">elenco da inserire</span></dd></div>
+        </dl>
+      </div>
+      <figure class="quote">
+        <blockquote>«Mettere la cultura della nostra terra nel motore della vita, perché sia produttiva.»</blockquote>
+        <figcaption>Il principio che guida l'associazione, ricordato dal vicepresidente Silvano Zampini a Vinitaly 2024</figcaption>
+        <img src="img/pieve-colonne.jpg" alt="Capitelli romanici di un chiostro in Valpolicella" width="1600" height="1074" loading="lazy" style="border-radius:2px">
+      </figure>
+    </div>
+
+    <div class="values" aria-label="I nostri valori">
+      <div class="value"><span class="v-word">Tutela</span><p>Custodire il paesaggio, i borghi, l'acqua e la memoria della Valpolicella storica.</p></div>
+      <div class="value"><span class="v-word">Promozione</span><p>Far conoscere il territorio e i suoi vini, dall'Amarone al Recioto, in Italia e nel mondo.</p></div>
+      <div class="value"><span class="v-word">Ricerca</span><p>Sostenere i giovani laureati che studiano economia, viticoltura, enologia e paesaggio.</p></div>
+      <div class="value"><span class="v-word">Cultura</span><p>Pittura, fotografia, cinema, letteratura e archeologia come linguaggi del territorio.</p></div>
+    </div>
+
+    <div class="timeline">
+      <h3>Tappe del cammino</h3>
+      <ol class="tl">
+        <li class="key"><p class="d">Fondazione</p><p class="y">1996</p><p>Nasce l'associazione, per iniziativa del prof. Francesco Quintarelli.</p></li>
+        <li><p class="d">Arte e immagine</p><p class="y">2018</p><p>Concorso pittorico «Dal sogno al pennello», simposio sulla longevità del vino, concorso fotografico sulla fauna.</p></li>
+        <li><p class="d">Premio di Laurea</p><p class="y">2023</p><p>Il premio viene dedicato a Marco Accordini.</p></li>
+        <li><p class="d">17 aprile</p><p class="y">2024</p><p>A Vinitaly viene presentata la XXII edizione del Premio.</p></li>
+        <li><p class="d">10 dicembre</p><p class="y">2024</p><p>Convegno e premiazione alla Cantina Valpolicella Negrar.</p></li>
+        <li class="key"><p class="d">Anniversario</p><p class="y">2026</p><p>Trent'anni di attività, e ancora tante storie da raccontare.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<div class="season" role="img" aria-label="Primavera: mandorli in fiore">
+  <img src="img/mandorli.jpg" alt="" loading="lazy">
+  <div class="cap"><div class="wrap"><span><span class="s-name">Primavera</span><br><span class="s-desc">i mandorli in fiore sulle colline</span></span><span class="s-cr">© Damolgraf Editore</span></div></div>
+</div>
+
+<!-- ============ INIZIATIVE ============ -->
+<section class="section" id="iniziative" aria-labelledby="h-ini">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Gli eventi</p>
+      <h2 id="h-ini">Le iniziative dell'associazione</h2>
+      <p class="lead">Premi, concorsi, convegni e progetti: ogni iniziativa racconta un volto diverso della Valpolicella.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filtra le iniziative">
+      <button class="chip" type="button" data-f="tutte" aria-pressed="true">Tutte</button>
+      <button class="chip" type="button" data-f="ricerca" aria-pressed="false">Vino e ricerca</button>
+      <button class="chip" type="button" data-f="arte" aria-pressed="false">Arte e immagine</button>
+      <button class="chip" type="button" data-f="storia" aria-pressed="false">Storia e territorio</button>
+      <button class="chip" type="button" data-f="lettere" aria-pressed="false">Lettere e comunicazione</button>
+    </div>
+    <div class="cards" id="cards">
+      <article class="card link" data-cat="ricerca" data-go="#premio">
+        <div class="img"><img src="img/premiati-2024.jpg" alt="I vincitori del Premio Tesi di Laurea 2024 con i diplomi" loading="lazy"></div>
+        <div class="body"><span class="tag">Vino e ricerca</span><h3>Premio Tesi di Laurea</h3><p>Quattro premi per le migliori tesi su economia, viticoltura, enologia e paesaggio. Dal 2023 in onore di Marco Accordini.</p><p class="who">Responsabile: Dott. Silvano Zampini · <a href="#premio">Scopri il premio</a></p></div>
+      </article>
+      <article class="card" data-cat="arte">
+        <div class="img"><img src="img/rassegna-manara.jpg" alt="Articolo di giornale: L'arte «Dal sogno al pennello» sotto il segno della Valpolicella" loading="lazy" style="object-position:top"></div>
+        <div class="body"><span class="tag">Arte e immagine</span><h3>Concorso pittorico «Valpolicella, dal sogno al pennello»</h3><p>Aperto a tutte le tecniche pittoriche, fumetto compreso. In giuria autori come Milo Manara e Giancarlo Zucconelli, l'architetto Libero Cecchini e il giornalista Marzio Breda.</p><p class="who">Responsabile: Prof.ssa Laura Poffe · collaboratore Lamberto Perusi</p></div>
+      </article>
+      <article class="card" data-cat="arte">
+        <div class="img"><img src="img/pergola-autunno.jpg" alt="Pergolato dorato in autunno" loading="lazy"></div>
+        <div class="body"><span class="tag">Arte e immagine</span><h3>Concorso pittorico estemporaneo</h3><p>Artisti al cavalletto nei luoghi della Valpolicella, per dipingere il territorio dal vero.</p><p class="who">Responsabile: Milo Manara · collaboratori Dott. Alberto Mion, Avv. Gianpaolo Mignolli, Avv. Michele Adami</p></div>
+      </article>
+      <article class="card" data-cat="arte">
+        <div class="img"><img src="img/roiter-embo.jpg" alt="Il fotografo Fulvio Roiter con Lou Embo" loading="lazy" style="object-position:center 30%"></div>
+        <div class="body"><span class="tag">Arte e immagine</span><h3>Concorso fotografico</h3><p>Nato con Fulvio Roiter e Lou Embo; tra le edizioni, «Particolari della fauna in Valpolicella 2018/2019».</p><p class="who">Responsabili: Fulvio Roiter e Lou Embo · collaboratori Luca Zanella, Maurizio Lavarini, Silvano Zampini, Sergio Ragno</p></div>
+      </article>
+      <article class="card" data-cat="arte">
+        <div class="img"><img src="img/adige-chiusa.jpg" alt="L'Adige tra pareti di roccia e una piccola chiesa" loading="lazy"></div>
+        <div class="body"><span class="tag">Arte e immagine</span><h3>Lungometraggio sul territorio</h3><p>Realizzazione e programmazione di un film che ha per protagonista la Valpolicella.</p><p class="who">In collaborazione con Dott. Franco Campostrini e Salvatore Viviano</p></div>
+      </article>
+      <article class="card" data-cat="ricerca">
+        <div class="img"><img src="img/grappoli.jpg" alt="Grappoli di uva rossa sotto la pergola" loading="lazy"></div>
+        <div class="body"><span class="tag">Vino e ricerca</span><h3>Progetto «Longevità del vino»</h3><p>Simposio del 2018 durante la vendemmia e tavola rotonda sulla durata nel tempo della qualità del vino.</p><p class="who">Anno: 2018</p></div>
+      </article>
+      <article class="card" data-cat="ricerca">
+        <div class="img logo"><img src="img/trenta-amaroni.jpg" alt="Logo I Trenta Amaroni" loading="lazy"></div>
+        <div class="body"><span class="tag">Vino e ricerca</span><h3>Premio «I Trenta Amaroni»</h3><p>Un riconoscimento dedicato ai grandi Amaroni della Valpolicella storica, con una manifestazione pensata per l'Arena di Verona.</p><p class="who">Relatori: Gianfranco Damoli, Claudio Bernabè, Gianpaolo Mignolli</p></div>
+      </article>
+      <article class="card" data-cat="ricerca">
+        <div class="img"><img src="img/vigna-nebbia.jpg" alt="Vigneto nella nebbia invernale" loading="lazy"></div>
+        <div class="body"><span class="tag">Vino e ricerca</span><h3>Convegno «L'acqua in Valpolicella, una risorsa preziosa»</h3><p>Un confronto sull'acqua come bene comune per l'agricoltura, il paesaggio e le comunità.</p><p class="who">Convegno pubblico</p></div>
+      </article>
+      <article class="card link" data-cat="storia" data-go="#imagines">
+        <div class="img"><img src="img/imagines-sala.jpg" alt="La mostra Imagines allestita su cavalletti" loading="lazy"></div>
+        <div class="body"><span class="tag">Storia e territorio</span><h3>Imagines e le strade romane</h3><p>La mostra «Racconti su tela della Valpolicella romana» e il progetto archeo-fotografico sulle strade e i siti romani.</p><p class="who">Responsabile: Dott. Davide Bronbo · <a href="#imagines">Vai alla mostra</a></p></div>
+      </article>
+      <article class="card" data-cat="storia">
+        <div class="img"><img src="img/pieve-colonne.jpg" alt="Colonne e capitelli romanici" loading="lazy"></div>
+        <div class="body"><span class="tag">Storia e territorio</span><h3>Scuola per guida turistica della Valpolicella</h3><p>Un percorso di formazione riservato ai giovani studenti, per raccontare il territorio a chi lo visita.</p><p class="who">Su autorizzazione di Ministero, Regione, Provincia e Comuni</p></div>
+      </article>
+      <article class="card" data-cat="storia">
+        <div class="img"><img src="img/mostra-ingresso.jpg" alt="Ingresso di una mostra con i roll-up dell'associazione" loading="lazy"></div>
+        <div class="body"><span class="tag">Storia e territorio</span><h3>«SE.DICI.EVENTI», Tesori della Valpolicella</h3><p>«Tesori della Valpolicella – Maroni»: un ciclo di appuntamenti dedicato ai tesori nascosti della valle.</p><p class="who">Ciclo di eventi</p></div>
+      </article>
+      <article class="card" data-cat="arte">
+        <div class="img"><img src="img/mandorli.jpg" alt="Mandorli in fiore" loading="lazy"></div>
+        <div class="body"><span class="tag">Arte e immagine</span><h3>«La Valpolicella a fumetti»</h3><p>Un concorso per bambini: raccontare la propria valle con matite, colori e nuvolette.</p><p class="who">Concorso per bambini</p></div>
+      </article>
+      <article class="card" data-cat="lettere">
+        <div class="img"><img src="img/rassegna-altro-giornale-2024.jpg" alt="Articolo de L'Altro Giornale, maggio 2024, su Vivi la Valpolicella" loading="lazy" style="object-position:top"></div>
+        <div class="body"><span class="tag">Lettere e comunicazione</span><h3>Premio giornalistico</h3><p>Un riconoscimento per chi racconta la Valpolicella sulla stampa, con serietà e passione.</p><p class="who">Responsabili: Gianfranco Damoli, Dott. Marzio Breda</p></div>
+      </article>
+      <article class="card" data-cat="lettere">
+        <div class="img"><img src="img/vigna-nebbia.jpg" alt="Filari nella nebbia" loading="lazy" style="object-position:left"></div>
+        <div class="body"><span class="tag">Lettere e comunicazione</span><h3>Premio Emilio Salgari</h3><p>Collaboriamo al Premio di Letteratura Avventurosa «Emilio Salgari» (biennale), presieduto da Claudio Gallo, con il Comitato Salgariano e il Pranzo Salgariano alla scuola alberghiera «Berti» del Chievo.</p><p class="who">Collaborazione</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PREMIO ============ -->
+<section class="section premio" id="premio" aria-labelledby="h-premio">
+  <div class="wrap">
+    <div class="premio-grid">
+      <figure class="premio-cover">
+        <img src="img/bando-tesi-copertina.jpg" alt="Copertina del bando Premio Tesi di Laurea Vivi la Valpolicella 2023-2024, XXII edizione, in onore di Marco Accordini" data-full="img/bando-tesi-copertina.jpg" loading="lazy">
+        <figcaption>Bando della XXII edizione, 2023–2024. Foto di copertina di Fulvio Roiter.</figcaption>
+        <img src="img/bando-regolamento.jpg" alt="Bando e regolamento del Premio Tesi di Laurea" loading="lazy">
+        <figcaption>Bando e regolamento completi: tocca l'immagine per ingrandirla.</figcaption>
+      </figure>
+      <div>
+        <div class="section-head" style="margin-bottom:18px">
+          <p class="eyebrow">Il Premio di Laurea</p>
+          <h2 id="h-premio">Premio Tesi di Laurea «Vivi la Valpolicella»</h2>
+          <p class="lead">In ricordo del socio fondatore prof. Francesco Quintarelli e, dalla XXII edizione, dedicato a Marco Accordini, figlio della Valpolicella scomparso a 26 anni.</p>
+        </div>
+        <div class="prose">
+          <p>Il premio sostiene lo sviluppo e la divulgazione delle conoscenze scientifiche con particolare attenzione al territorio della Valpolicella. È assegnato in collaborazione con Cantina Valpolicella Negrar, Valpolicella Benaco Banca e l'Accademia di Agricoltura Scienze e Lettere di Verona, con il patrocinio degli ordini professionali e delle istituzioni del territorio.</p>
+        </div>
+        <div class="facts">
+          <div class="fact"><div class="n">XXII</div><div class="l">edizioni fino al 2024</div></div>
+          <div class="fact"><div class="n">€ 2.000</div><div class="l">montepremi complessivo</div></div>
+          <div class="fact"><div class="n">4 × € 500</div><div class="l">premi, più un diploma dell'associazione</div></div>
+        </div>
+        <ul class="ambiti" aria-label="Ambiti del premio">
+          <li><b>1</b><span>Economia e marketing</span></li>
+          <li><b>2</b><span>Viticoltura, tecniche agricole e biodiversità</span></li>
+          <li><b>3</b><span>Enologia</span></li>
+          <li><b>4</b><span>Paesaggio e architettura</span></li>
+        </ul>
+        <div class="credits">
+          <p><strong>Chi può partecipare:</strong> laureati (triennale o magistrale) di un'università italiana, con una tesi sugli argomenti del premio. Le tesi non riferite alla Valpolicella indicano nel riassunto una possibile applicazione al territorio.</p>
+          <p><strong>Responsabile:</strong> Dott. Silvano Zampini. <strong>Collaboratori:</strong> Sergio Ragno, Claudio Bernabè, Daniele Accordini, Renzo Bighignoli, Daniele Maroldi, prof. GianMaria Tommasi.</p>
+          <p><strong>Finanziato da</strong> Valpolicella Benaco Banca e Cantina Valpolicella Negrar.</p>
+          <p><strong>Prossimo bando:</strong> scrivi a <span class="sel">info@vivilavalpolicella.it</span> per ricevere il regolamento della nuova edizione.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="convegno">
+      <img src="img/convegno-2024-locandina.jpg" alt="Locandina del convegno Il valore della ricerca per una nuova visione della Valpolicella, 10 dicembre 2024" loading="lazy">
+      <div class="prose">
+        <p class="eyebrow">Martedì 10 dicembre 2024</p>
+        <h3 style="font-size:1.4rem;color:var(--ink)">«Il valore della ricerca per una nuova visione della Valpolicella»</h3>
+        <p>Nella Sala Convegni Domini Veneti della Cantina Valpolicella Negrar sono state presentate e premiate le migliori tesi di laurea nazionali vincitrici della XXII edizione. Accanto ai premiati, relatori dal mondo universitario ed enologico e le istituzioni del territorio.</p>
+      </div>
+    </div>
+
+    <div class="gallery" aria-label="Fotografie della premiazione 2024">
+      <figure><img src="img/pomarici.jpg" alt="Il prof. Eugenio Pomarici interviene al convegno" loading="lazy"><figcaption>Prof. Eugenio Pomarici, Università di Padova</figcaption></figure>
+      <figure><img src="img/cotarella.jpg" alt="L'enologo Riccardo Cotarella al tavolo dei relatori" loading="lazy"><figcaption>L'enologo Riccardo Cotarella</figcaption></figure>
+      <figure><img src="img/castelli-pavesi.jpg" alt="Bruna Castelli Pavesi in platea" loading="lazy"><figcaption>Bruna Castelli Pavesi, presidente Donne della Valpolicella</figcaption></figure>
+      <figure><img src="img/sindaco-negrar.jpg" alt="Il sindaco di Negrar di Valpolicella legge un intervento" loading="lazy"><figcaption>Fausto Rossignoli, sindaco di Negrar di Valpolicella</figcaption></figure>
+      <figure><img src="img/convegno-sala.jpg" alt="La sala del convegno con il tavolo dei relatori" loading="lazy"><figcaption>La sala Domini Veneti</figcaption></figure>
+      <figure><img src="img/premiati-2024.jpg" alt="Foto di gruppo dei premiati" loading="lazy"><figcaption>I premiati della XXII edizione</figcaption></figure>
+      <figure><img src="img/premiazione-2024.jpg" alt="Consegna dei diplomi con collegamento video dei vincitori" loading="lazy"><figcaption>La consegna dei diplomi</figcaption></figure>
+      <figure><img src="img/rassegna-altro-giornale-2024.jpg" alt="Articolo de L'Altro Giornale, maggio 2024" loading="lazy" style="object-position:top"><figcaption>L'Altro Giornale, maggio 2024</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="season" role="img" aria-label="Estate: grappoli sotto la pergola">
+  <img src="img/grappoli.jpg" alt="" loading="lazy">
+  <div class="cap"><div class="wrap"><span><span class="s-name">Estate</span><br><span class="s-desc">i grappoli maturano sotto la pergola</span></span><span class="s-cr">© Damolgraf Editore</span></div></div>
+</div>
+
+<!-- ============ PUBBLICAZIONI ============ -->
+<section class="section" id="pubblicazioni" aria-labelledby="h-pub">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Le pubblicazioni</p>
+      <h2 id="h-pub">Mappe, guide e immagini per conoscere la valle</h2>
+    </div>
+    <div class="pub-grid">
+      <figure class="map-fig">
+        <img src="img/mappa-valpolicella.jpg" alt="Mappa illustrata della Valpolicella con testo descrittivo, realizzata dall'associazione" loading="lazy">
+        <figcaption>La mappa illustrata della Valpolicella, tra il Lago di Garda, l'Adige e Verona. Tocca per ingrandire e leggere i testi.</figcaption>
+      </figure>
+      <div class="pub-list">
+        <div class="pub">
+          <img src="img/mappa-valpolicella.jpg" alt="" loading="lazy" style="object-position:top">
+          <div><h3>Mappa e guida informativa della Valpolicella</h3><p>Opere dell'indimenticato prof. Francesco Quintarelli, cofondatore dell'associazione: la storia, i paesi, le pievi, le ville e i vini della valle in un'unica carta.</p></div>
+        </div>
+        <div class="pub">
+          <img src="img/portale-vite.jpg" alt="" loading="lazy">
+          <div><h3>La Valpolicella nelle immagini di Fulvio Roiter</h3><p>Un volume con le fotografie di Fulvio Roiter, edito da Damolgraf Editore, donato anche agli artisti e ai premiati dei concorsi.</p></div>
+        </div>
+        <div class="pub">
+          <img src="img/locandina-progetti-2024.jpg" alt="" loading="lazy" style="object-position:top">
+          <div><h3>Materiali e bandi</h3><p>Locandine, bandi e regolamenti dei premi e dei concorsi. <span class="todo">aggiungere PDF scaricabili</span></p></div>
+        </div>
+        <div class="press">
+          <h3>Rassegna stampa</h3>
+          <div class="pub" style="border:0;padding:0">
+            <img src="img/rassegna-manara.jpg" alt="Articolo L'arte Dal sogno al pennello sotto il segno della Valpolicella" loading="lazy">
+            <div><p><strong>«L'arte "Dal sogno al pennello" sotto il segno della Valpolicella»</strong>: la giuria del concorso pittorico con Milo Manara.</p><p style="margin-top:8px"><strong>L'Altro Giornale, maggio 2024</strong>: a Vinitaly la presentazione della XXII edizione del Premio.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IMAGINES ============ -->
+<section class="section imagines" id="imagines" aria-labelledby="h-im">
+  <div class="wrap">
+    <div class="im-grid">
+      <div>
+        <div class="section-head">
+          <p class="eyebrow">La mostra</p>
+          <h2 id="h-im">Imagines</h2>
+          <p class="lead">Racconti su tela della Valpolicella romana.</p>
+        </div>
+        <div class="prose">
+          <p>Una mostra che riporta alla luce la Valpolicella di età romana attraverso reperti, immagini e racconti su tela, esposti su cavalletti come in un laboratorio d'arte. Accanto alla mostra, il progetto <strong>Reperti Romani</strong> continua ad arricchirsi di nuovi materiali.</p>
+          <p>Con il patrocinio del Museo di Archeologia di Verona e del Ministero della Cultura, la mostra è stata inaugurata alla presenza dei sindaci della Valpolicella.</p>
+        </div>
+        <div class="im-team">
+          <p><b>Responsabile:</b> Dott. Davide Bronbo</p>
+          <p><b>Collaboratori:</b> Dott. Giuseppe Poiesi, Giovanni Viviani, Prof. Maurizio Lavarini, l'editore Gianfranco Damoli, Dott. Giancarlo Modena, Dott. Franco Campostrini</p>
+        </div>
+        <div class="rr" style="margin-top:22px"><img src="img/reperti-romani.jpg" alt="Logo Reperti Romani" loading="lazy"></div>
+      </div>
+      <div class="im-photos">
+        <img class="wide" src="img/imagines-sindaci.jpg" alt="I sindaci della Valpolicella con la fascia tricolore all'inaugurazione della mostra Imagines" loading="lazy">
+        <img src="img/imagines-sala.jpg" alt="Le opere della mostra Imagines sui cavalletti" loading="lazy">
+        <img src="img/imagines-collage.jpg" alt="Collage di fotografie della mostra Imagines con visitatori" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="season" role="img" aria-label="Autunno: pergole dorate">
+  <img src="img/pergola-autunno.jpg" alt="" loading="lazy">
+  <div class="cap"><div class="wrap"><span><span class="s-name">Autunno</span><br><span class="s-desc">l'oro delle foglie dopo la vendemmia</span></span><span class="s-cr">© Damolgraf Editore</span></div></div>
+</div>
+
+<!-- ============ FUTURO ============ -->
+<section class="section" id="futuro" aria-labelledby="h-fut">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Il futuro · La rete</p>
+      <h2 id="h-fut">I progetti che stiamo costruendo</h2>
+      <p class="lead">Presentati il 12 ottobre 2024 all'Hotel Kona di San Vito di Negrar, guidano il cammino verso i trent'anni e oltre.</p>
+    </div>
+    <ol class="proj">
+      <li><div><h3>Tesi di Laurea</h3><p>Nuove edizioni del premio per i giovani laureati.</p><p class="rel">Relatori: Daniele Accordini, Silvano Zampini, Valpolicella Benaco Banca</p></div></li>
+      <li><div><h3>Fiera del Recioto della Valpolicella</h3><p>Riservata a chi ha vinto almeno una volta il primo premio al palio di Negrar o di Sant'Ambrogio di Valpolicella.</p><p class="rel">Relatori: Lorenzo Simeoni, Sergio Ragno, Claudio Bernabè</p></div></li>
+      <li><div><h3>Reperti Romani</h3><p>La collezione verrà ampliata con nuovi reperti.</p><p class="rel">Relatori: Giovanni Viviani, Gianfranco Damoli</p></div></li>
+      <li><div><h3>Grappolo d'oro</h3><p>Un bollino adesivo numerato per ogni bottiglia di Amarone, Recioto e Ripasso delle aziende della Valpolicella storica.</p><p class="rel">Relatori: Consorzio della Valpolicella, Lamberto Mizzon, Silvano Zampini, Gianfranco Damoli, Laura Damoli, Niko Damoli</p></div></li>
+      <li><div><h3>I 33 Amaroni della Valpolicella storica</h3><p>Un premio a personalità di alto spessore.</p><p class="rel">Relatori: Gianfranco Damoli, Claudio Bernabè, Gianpaolo Mignolli</p></div></li>
+      <li><div><h3>Concorso pittorico estemporaneo</h3><p>Una nuova edizione tra i paesaggi della Valpolicella.</p><p class="rel">Relatori: Laura Poffe, Milo Manara</p></div></li>
+      <li><div><h3>Concorso fotografico europeo</h3><p>Il concorso fotografico si apre all'Europa.</p><p class="rel">Relatori: Lou Embo Roiter, Giancarla Marconi, Sergio Ragno, Claudio Bernabè, Silvano Zampini</p></div></li>
+      <li><div><h3>Corsa podistica «su e giù»</h3><p>Per le vie dei centri storici della Valpolicella.</p></div></li>
+      <li><div><h3>La fontana a tre vasche di Negrar</h3><p>Restauro della fontana nel centro storico di Negrar, per riportarla allo splendore di una grande fontana monumentale.</p></div></li>
+    </ol>
+
+    <div class="rete">
+      <div>
+        <p class="eyebrow">La rete</p>
+        <h3 style="font-size:1.5rem;margin:10px 0 14px">Insieme, per la Valpolicella</h3>
+        <div class="prose"><p>L'associazione lavora con cantine, banche del territorio, università, ordini professionali, consorzi e amministrazioni. È questa rete che rende possibili premi, mostre e convegni. Vuoi farne parte come socio, partner o sponsor? <a href="#contatti">Scrivici</a>.</p></div>
+      </div>
+      <div>
+        <div class="partners" aria-label="Partner e collaborazioni">
+          <span class="main">Cantina Valpolicella Negrar</span>
+          <span class="main">Valpolicella Benaco Banca</span>
+          <span>Accademia di Agricoltura Scienze e Lettere di Verona</span>
+          <span>Consorzio Tutela Vini Valpolicella</span>
+          <span>Ordine dei Dottori Agronomi e Dottori Forestali di Verona</span>
+          <span>Ordine degli Architetti PPC di Verona</span>
+          <span>Ingegneri della Provincia di Verona</span>
+          <span>Assoenologi</span>
+          <span>Damolgraf Editore</span>
+          <span>Domini Veneti</span>
+          <span>Donne della Valpolicella</span>
+          <span>Comitato Salgariano</span>
+          <span>Pro Loco Negrar di Valpolicella</span>
+        </div>
+        <div class="patrocini"><img src="img/patrocini.jpg" alt="Loghi di Regione del Veneto, Provincia di Verona, Comune di Verona e dei comuni della Valpolicella" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOSTIENI ============ -->
+<section class="support" aria-labelledby="h-sup">
+  <div class="wrap">
+    <div class="prose">
+      <p class="eyebrow">Sostieni l'associazione</p>
+      <h2 id="h-sup" style="color:var(--ink)">Trent'anni di storie da raccontare, e ancora tante da scrivere</h2>
+      <p>Diventa socio o sostieni i premi per i giovani laureati e i progetti di tutela del territorio con un contributo.</p>
+    </div>
+    <div style="display:grid;gap:10px">
+      <span class="eyebrow" style="color:var(--vine)">IBAN dell'associazione</span>
+      <div class="copyrow"><code id="iban">IT96M0831559600000000334400</code><button class="copybtn" type="button" data-copy="iban">Copia</button></div>
+      <span class="form-note">Intestato ad Associazione Vivi la Valpolicella · C.F. 93096760231</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTATTI ============ -->
+<section class="section" id="contatti" aria-labelledby="h-con">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Contatti</p>
+      <h2 id="h-con">Vieni a trovarci o scrivici</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="addr">
+        <div class="blk"><span class="k">Email</span><span class="v"><span class="sel" id="mail">info@vivilavalpolicella.it</span> <button class="copybtn" type="button" data-copy="mail">Copia</button></span></div>
+        <div class="blk"><span class="k">Sede</span><span class="v">Via Pighi, 1 · 37024 San Vito di Negrar di Valpolicella (VR)<br><small>c/o Hotel San Vito · Tel. <span class="sel">045 7501333</span></small></span></div>
+        <div class="blk"><span class="k">Filiale e informazioni</span><span class="v">37124 Parona di Valpolicella (VR)<br><small>c/o Renbel Travel srl · Cell. <span class="sel">349 1181664</span><br>Dal lunedì al venerdì, 10:00–12:00 e 17:00–19:00</small></span></div>
+        <div class="blk" style="border:0"><span class="k">Dati dell'associazione</span><span class="v"><small>Codice fiscale 93096760231 · Partita IVA 02750300234</small></span></div>
+      </div>
+      <form id="cform" novalidate>
+        <div class="form-row">
+          <label for="f-nome">Nome e cognome<input id="f-nome" name="nome" autocomplete="name" required></label>
+          <label for="f-email">Email<input id="f-email" name="email" type="email" autocomplete="email" required></label>
+        </div>
+        <label for="f-tema">Argomento
+          <select id="f-tema" name="tema">
+            <option>Informazioni generali</option>
+            <option>Premio Tesi di Laurea</option>
+            <option>Concorsi pittorici e fotografici</option>
+            <option>Diventare socio</option>
+            <option>Partnership e sponsorizzazioni</option>
+            <option>Stampa</option>
+          </select>
+        </label>
+        <label for="f-msg">Messaggio<textarea id="f-msg" name="messaggio" required></textarea></label>
+        <label for="f-privacy" style="display:flex;gap:10px;align-items:flex-start;font-weight:400"><input id="f-privacy" name="privacy" type="checkbox" required style="width:auto;margin-top:4px"> <span>Acconsento al trattamento dei miei dati per ricevere risposta, ai sensi del Regolamento UE 2016/679.</span></label>
+        <button class="btn primary" type="submit" id="f-send" style="justify-self:start">Invia messaggio</button>
+        <p class="form-note">Oppure scrivi direttamente a info@vivilavalpolicella.it.</p>
+        <div class="form-out" id="fout" hidden></div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <span class="fplate"><img src="img/logo-wordmark.png" alt="Vivi la Valpolicella" width="1816" height="283"></span>
+      <span>Associazione culturale per lo sviluppo, la tutela e la promozione della Valpolicella</span>
+    </div>
+    <div class="fine">
+      <span>© 1996–2026 Associazione Vivi la Valpolicella · C.F. 93096760231 · P.IVA 02750300234</span>
+      <span>Fotografie di paesaggio © Damolgraf Editore · vivilavalpolicella.it</span>
+    </div>
+  </div>
+</footer>
+
+<dialog class="lb" id="lb" aria-label="Immagine ingrandita">
+  <img id="lbImg" alt="">
+  <div class="lb-bar"><span id="lbCap"></span><button type="button" id="lbClose">Chiudi</button></div>
+</dialog>
+
+<script src="config.js"></script>
+<script>
+(function(){
+  // menu mobile
+  var btn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+  btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');btn.setAttribute('aria-expanded','false')}});
+
+  // filtri iniziative
+  var chips=document.querySelectorAll('.chip'),cards=document.querySelectorAll('#cards .card');
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    chips.forEach(function(x){x.setAttribute('aria-pressed','false')});c.setAttribute('aria-pressed','true');
+    var f=c.dataset.f;cards.forEach(function(k){k.hidden=!(f==='tutte'||k.dataset.cat===f)});
+  })});
+  document.querySelectorAll('.card.link').forEach(function(k){k.addEventListener('click',function(e){
+    if(e.target.tagName==='A')return;var t=document.querySelector(k.dataset.go);if(t)t.scrollIntoView();
+  })});
+
+  // lightbox
+  var lb=document.getElementById('lb'),li=document.getElementById('lbImg'),lc=document.getElementById('lbCap');
+  document.querySelectorAll('.premio-cover img,.gallery img,.convegno img,.map-fig img,.pub img,.im-photos img').forEach(function(im){
+    im.style.cursor='zoom-in';
+    im.addEventListener('click',function(){
+      li.src=im.dataset.full||im.currentSrc||im.src;li.alt=im.alt;
+      var fc=im.closest('figure')&&im.closest('figure').querySelector('figcaption');
+      lc.textContent=(fc&&!im.closest('.premio-cover'))?fc.textContent:im.alt;
+      if(lb.showModal){lb.showModal()}else{lb.setAttribute('open','')}
+    });
+  });
+  document.getElementById('lbClose').addEventListener('click',function(){lb.close()});
+  lb.addEventListener('click',function(e){if(e.target===lb)lb.close()});
+
+  // copia
+  document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){
+    var el=document.getElementById(b.dataset.copy),txt=el.textContent.trim();
+    function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selezionato'}
+    try{navigator.clipboard.writeText(txt).then(function(){b.textContent='Copiato'},sel)}catch(e){sel()}
+    setTimeout(function(){b.textContent='Copia'},2200);
+  })});
+
+  // form contatti: salva su Supabase se configurato, altrimenti apre l'email
+  var CFG=window.VLV_CONFIG||{};
+  document.getElementById('cform').addEventListener('submit',function(e){
+    e.preventDefault();
+    var f=e.target,out=document.getElementById('fout'),btn=document.getElementById('f-send');
+    var nome=f.nome.value.trim(),mail=f.email.value.trim(),msg=f.messaggio.value.trim();
+    out.hidden=false;
+    if(!nome||!mail||!msg||mail.indexOf('@')<1){out.textContent='Compila nome, un indirizzo email valido e il messaggio.';return}
+    if(!f.privacy.checked){out.textContent='Per inviare il messaggio serve il consenso al trattamento dei dati.';return}
+    var subj='[Sito] '+f.tema.value+' – '+nome;
+    function mailto(){
+      var href='mailto:info@vivilavalpolicella.it?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(msg+'\n\n'+nome+'\n'+mail);
+      out.innerHTML='';var a=document.createElement('a');a.href=href;a.textContent='Apri l\u2019email nel tuo programma di posta';
+      var p=document.createElement('p');p.style.marginTop='6px';p.textContent='Se non si apre, scrivi a info@vivilavalpolicella.it.';
+      out.appendChild(a);out.appendChild(p);location.href=href;
+    }
+    if(!CFG.supabaseUrl||!CFG.supabaseAnonKey){mailto();return}
+    btn.disabled=true;out.textContent='Invio in corso…';
+    fetch(CFG.supabaseUrl.replace(/\/$/,'')+'/rest/v1/messaggi',{
+      method:'POST',
+      headers:{'apikey':CFG.supabaseAnonKey,'Authorization':'Bearer '+CFG.supabaseAnonKey,'Content-Type':'application/json','Prefer':'return=minimal'},
+      body:JSON.stringify({nome:nome,email:mail,argomento:f.tema.value,messaggio:msg,consenso_privacy:true})
+    }).then(function(r){
+      if(!r.ok)throw new Error(r.status);
+      out.textContent='Messaggio inviato. Grazie, ti risponderemo al più presto.';f.reset();
+    }).catch(function(){
+      out.textContent='Invio non riuscito. Riprova tra poco o scrivi a info@vivilavalpolicella.it.';
+    }).finally(function(){btn.disabled=false});
+  });
+})();
+</script>
+
+</body>
+</html>
