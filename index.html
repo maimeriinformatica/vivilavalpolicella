@@ -279,6 +279,25 @@ dialog.lb::backdrop{background:rgba(12,10,8,.88)}
 dialog.lb img{max-height:86vh;width:auto;margin:auto;border-radius:2px}
 dialog.lb .lb-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#EEE9E0;padding:10px 2px 0;font-size:.88rem}
 dialog.lb button{background:#EEE9E0;color:#1F1B17;border:0;border-radius:999px;padding:8px 14px;font:600 .85rem var(--sans);cursor:pointer}
+
+/* ---------- evento 30 anni ---------- */
+.evento{background:var(--surface);border-bottom:1px solid var(--line)}
+.ev-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,64px);align-items:center}
+.ev-copy{display:grid;gap:18px}
+.ev-copy h2{font-size:clamp(1.9rem,4vw,2.8rem)}
+.ev-copy .motto{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,2.6vw,1.9rem);color:var(--amarone);margin:0}
+.ev-facts{display:grid;gap:0;margin:6px 0 0;border-top:1px solid var(--line)}
+.ev-facts div{display:grid;grid-template-columns:120px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.ev-facts dt{font-family:var(--display);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.ev-facts dd{margin:0;font-weight:600}
+.ev-facts dd span{display:block;font-weight:400;color:var(--ink-soft);font-size:.95rem}
+.ev-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.ev-poster{margin:0;justify-self:center;width:100%;max-width:440px}
+.ev-poster a{display:block;border-radius:4px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);transition:transform .25s ease}
+.ev-poster a:hover{transform:translateY(-3px)}
+.ev-poster figcaption{font-size:.84rem;color:var(--muted);margin-top:10px;text-align:center}
+.evento .btn.ghost{border-color:var(--ink);color:var(--ink)}
+@media (max-width:860px){.ev-grid{grid-template-columns:1fr}.ev-poster{max-width:380px}.ev-facts div{grid-template-columns:96px 1fr}}
 </style>
 
 </head>
@@ -291,6 +310,7 @@ dialog.lb button{background:#EEE9E0;color:#1F1B17;border:0;border-radius:999px;p
     </a>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav" aria-label="Sezioni">
+      <a href="#evento">30° Anniversario</a>
       <a href="#chi-siamo">Chi siamo</a>
       <a href="#iniziative">Iniziative</a>
       <a href="#premio">Premio di Laurea</a>
@@ -314,9 +334,9 @@ dialog.lb button{background:#EEE9E0;color:#1F1B17;border:0;border-radius:999px;p
         <span class="lbl">anni<br>1996 — 2026</span>
       </div>
       <div class="hero-actions">
-        <a class="btn primary" href="#iniziative">Scopri le iniziative</a>
-        <a class="btn ghost" href="#premio">Premio Tesi di Laurea</a>
-      </div>
+        <a class="btn primary" href="#evento">6 novembre: la serata dei 30 anni</a>
+        <a class="btn ghost" href="#iniziative">Scopri le iniziative</a>
+              </div>
     </div>
     <figure class="hero-figure">
       <img src="img/villa-vigneti-autunno.jpg" alt="Una villa veneta tra cipressi e vigneti dorati d'autunno in Valpolicella" width="912" height="607" style="object-position:35% center">
@@ -327,6 +347,33 @@ dialog.lb button{background:#EEE9E0;color:#1F1B17;border:0;border-radius:999px;p
       <strong>I nostri 8 comuni</strong>
       <span>Dolcè</span><span>Fumane</span><span>Marano di Valpolicella</span><span>Negrar di Valpolicella</span><span>Pescantina</span><span>San Pietro in Cariano</span><span>Sant'Ambrogio di Valpolicella</span><span>Sant'Anna d'Alfaedo</span>
     </div>
+  </div>
+</section>
+
+<!-- ============ EVENTO 30 ANNI ============ -->
+<section class="section evento" id="evento" aria-labelledby="h-ev">
+  <div class="wrap ev-grid">
+    <div class="ev-copy">
+      <p class="eyebrow">Evento · 30° Anniversario 1996–2026</p>
+      <h2 id="h-ev">Trent'anni di Vivi la Valpolicella</h2>
+      <p class="motto">Una sera, la nostra terra.</p>
+      <p class="lead" style="margin:0">Una serata per festeggiare insieme i trent'anni dell'associazione fondata dal prof. Francesco Quintarelli, con soci, amici, istituzioni e sostenitori.</p>
+      <dl class="ev-facts">
+        <div><dt>Quando</dt><dd>Venerdì 6 novembre 2026<span>ore 18.00</span></dd></div>
+        <div><dt>Dove</dt><dd>Masi<span>Via Monteleone 21, Gargagnago in Valpolicella (VR)</span></dd></div>
+        <div><dt>Info</dt><dd><a href="mailto:info@vivilavalpolicella.it?subject=Serata%2030%C2%B0%20Anniversario">info@vivilavalpolicella.it</a></dd></div>
+      </dl>
+      <div class="ev-actions">
+        <a class="btn primary" href="img/locandina-30-anni.jpg" target="_blank" rel="noopener">Apri la locandina</a>
+        <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Masi%20Via%20Monteleone%2021%20Gargagnago%20di%20Valpolicella" target="_blank" rel="noopener">Come arrivare</a>
+      </div>
+    </div>
+    <figure class="ev-poster">
+      <a href="img/locandina-30-anni.jpg" target="_blank" rel="noopener" aria-label="Apri la locandina del 30° Anniversario a schermo intero">
+        <img src="img/locandina-30-anni.jpg" alt="Locandina del 30° Anniversario di Vivi la Valpolicella: 6 novembre 2026 a Masi, Via Monteleone 21, Gargagnago in Valpolicella. Una sera, la nostra terra." width="1516" height="2166" loading="lazy">
+      </a>
+      <figcaption>Locandina della serata · foto del Maestro Fulvio Roiter</figcaption>
+    </figure>
   </div>
 </section>
 
