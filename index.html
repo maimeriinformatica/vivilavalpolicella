@@ -191,6 +191,7 @@ p{margin:0}
 .gallery figcaption{font-size:.8rem;color:var(--muted);line-height:1.35}
 .convegno{margin-top:clamp(36px,5vw,56px);display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:clamp(18px,3vw,28px)}
 .convegno img{cursor:zoom-in;border-radius:2px}
+.wide-photo{margin:clamp(36px,5vw,56px) 0 0;display:grid;gap:8px}.wide-photo img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:2px;cursor:zoom-in}.wide-photo figcaption{font-size:.84rem;color:var(--muted)}
 @media (max-width:900px){.premio-grid,.convegno{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.ambiti{grid-template-columns:1fr}}
 @media (max-width:520px){.facts{grid-template-columns:1fr}.fact + .fact{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
 
@@ -298,6 +299,15 @@ dialog.lb button{background:#EEE9E0;color:#1F1B17;border:0;border-radius:999px;p
 .ev-poster figcaption{font-size:.84rem;color:var(--muted);margin-top:10px;text-align:center}
 .evento .btn.ghost{border-color:var(--ink);color:var(--ink)}
 @media (max-width:860px){.ev-grid{grid-template-columns:1fr}.ev-poster{max-width:380px}.ev-facts div{grid-template-columns:96px 1fr}}
+.pdates{display:grid;gap:0;margin:22px 0;border-top:1px solid var(--line)}
+.pdates div{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.pdates dt{font-family:var(--display);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.pdates dd{margin:0;font-weight:600}
+.docs{border:1px solid var(--line);border-radius:4px;background:var(--paper);padding:10px 14px}
+.docs summary{cursor:pointer;font-weight:600;color:var(--ink)}
+.docs ul{margin:10px 0 8px;padding-left:20px;display:grid;gap:4px}
+.convegno.presenta{align-items:start}
+@media (max-width:520px){.pdates div{grid-template-columns:1fr;gap:2px}}
 </style>
 
 </head>
@@ -438,7 +448,7 @@ dialog.lb button{background:#EEE9E0;color:#1F1B17;border:0;border-radius:999px;p
     <div class="cards" id="cards">
       <article class="card link" data-cat="ricerca" data-go="#premio">
         <div class="img"><img src="img/premiati-2024.jpg" alt="I vincitori del Premio Tesi di Laurea 2024 con i diplomi" loading="lazy"></div>
-        <div class="body"><span class="tag">Vino e ricerca</span><h3>Premio Tesi di Laurea</h3><p>Quattro premi per le migliori tesi su economia, viticoltura, enologia e paesaggio. Dal 2023 in onore di Marco Accordini.</p><p class="who">Responsabile: Dott. Silvano Zampini · <a href="#premio">Scopri il premio</a></p></div>
+        <div class="body"><span class="tag">Vino e ricerca</span><h3>Premio Tesi di Laurea Vivi la Valpolicella</h3><p>Quattro premi da € 1.000 per le migliori tesi su economia, viticoltura, enologia e paesaggio. XXIV edizione 2026.</p><p class="who">Responsabile: Dott. Silvano Zampini · <a href="#premio">Bando 2026</a></p></div>
       </article>
       <article class="card" data-cat="arte">
         <div class="img"><img src="img/rassegna-manara.jpg" alt="Articolo di giornale: L'arte «Dal sogno al pennello» sotto il segno della Valpolicella" loading="lazy" style="object-position:top"></div>
@@ -501,36 +511,64 @@ dialog.lb button{background:#EEE9E0;color:#1F1B17;border:0;border-radius:999px;p
   <div class="wrap">
     <div class="premio-grid">
       <figure class="premio-cover">
-        <img src="img/bando-tesi-copertina.jpg" alt="Copertina del bando Premio Tesi di Laurea Vivi la Valpolicella 2023-2024, XXII edizione, in onore di Marco Accordini" data-full="img/bando-tesi-copertina.jpg" loading="lazy">
-        <figcaption>Bando della XXII edizione, 2023–2024. Foto di copertina di Fulvio Roiter.</figcaption>
-        <img src="img/bando-regolamento.jpg" alt="Bando e regolamento del Premio Tesi di Laurea" loading="lazy">
+        <img src="img/bando-2026-copertina.jpg" alt="Copertina del bando Premio Internazionale Tesi di Laurea Vivi la Valpolicella, XXIV edizione 2026" loading="lazy">
+        <figcaption>Bando della XXIV edizione, 2026.</figcaption>
+        <img src="img/bando-2026-regolamento.jpg" alt="Bando e regolamento completo del Premio Internazionale Tesi di Laurea 2026" loading="lazy">
         <figcaption>Bando e regolamento completi: tocca l'immagine per ingrandirla.</figcaption>
       </figure>
       <div>
         <div class="section-head" style="margin-bottom:18px">
-          <p class="eyebrow">Il Premio di Laurea</p>
+          <p class="eyebrow">Il Premio di Laurea · XXIV edizione 2026</p>
           <h2 id="h-premio">Premio Tesi di Laurea «Vivi la Valpolicella»</h2>
-          <p class="lead">In ricordo del socio fondatore prof. Francesco Quintarelli e, dalla XXII edizione, dedicato a Marco Accordini, figlio della Valpolicella scomparso a 26 anni.</p>
+          <p class="lead">Da quest’anno il premio si chiama semplicemente «Premio Tesi di Laurea Vivi la Valpolicella», senza altre dediche. Nato in ricordo del socio fondatore prof. Francesco Quintarelli, dalla XXII edizione al 2025 è stato dedicato a Marco Accordini.</p>
         </div>
         <div class="prose">
-          <p>Il premio sostiene lo sviluppo e la divulgazione delle conoscenze scientifiche con particolare attenzione al territorio della Valpolicella. È assegnato in collaborazione con Cantina Valpolicella Negrar, Valpolicella Benaco Banca e l'Accademia di Agricoltura Scienze e Lettere di Verona, con il patrocinio degli ordini professionali e delle istituzioni del territorio.</p>
+          <p>Il premio contribuisce allo sviluppo e alla divulgazione delle conoscenze scientifiche, con particolare applicazione al territorio della Valpolicella. È assegnato in collaborazione con Cantina Valpolicella Negrar, BCC Valpolicella Benaco Banca e l'Accademia di Agricoltura Scienze e Lettere di Verona, con il patrocinio del Ministero dell'Agricoltura, della Sovranità Alimentare e delle Foreste, della Camera di Commercio di Verona, degli ordini professionali e dei comuni della Valpolicella storica.</p>
+          <p>Dal 2026 il premio è <strong>internazionale</strong>: gli studenti di nazionalità straniera possono presentare la tesi in lingua inglese. Gli studi possono riguardare qualsiasi area geografica italiana ed europea.</p>
         </div>
+        <dl class="pdates" aria-label="Importi e scadenze">
+          <div><dt>Premi</dt><dd>4 premi da € 1.000, uno per ambito, più il diploma dell'associazione</dd></div>
+          <div><dt>Domande entro</dt><dd>30 settembre 2026</dd></div>
+          <div><dt>Valutazione</dt><dd>entro il 30 novembre 2026</dd></div>
+          <div><dt>Premiazione</dt><dd>entro il 31 dicembre 2026, al convegno «Il valore della ricerca per una nuova visione della Valpolicella»</dd></div>
+        </dl>
         <ul class="ambiti" aria-label="Ambiti del premio">
           <li><b>1</b><span>Economia e marketing</span></li>
-          <li><b>2</b><span>Viticoltura, tecniche agricole e biodiversità</span></li>
+          <li><b>2</b><span>Viticoltura, tecniche agricole, biodiversità e cambiamento climatico</span></li>
           <li><b>3</b><span>Enologia</span></li>
           <li><b>4</b><span>Paesaggio e architettura</span></li>
         </ul>
         <div class="credits">
-          <p><strong>Chi può partecipare:</strong> laureati (triennale o magistrale) di un'università italiana, con una tesi sugli argomenti del premio. Le tesi non riferite alla Valpolicella indicano nel riassunto una possibile applicazione al territorio.</p>
-          <p><strong>Responsabile:</strong> Dott. Silvano Zampini. <strong>Collaboratori:</strong> Sergio Ragno, Claudio Bernabè, Daniele Accordini, Renzo Bighignoli, Daniele Maroldi, prof. GianMaria Tommasi.</p>
-          <p><strong>Finanziato da</strong> Valpolicella Benaco Banca e Cantina Valpolicella Negrar.</p>
-          <p><strong>Prossimo bando:</strong> scrivi a <span class="sel">info@vivilavalpolicella.it</span> per ricevere il regolamento della nuova edizione.</p>
+          <p><strong>Chi può partecipare:</strong> laureati (triennale o magistrale) in un'università italiana, pubblica o privata, negli anni accademici dal 2021-2022 al 2025-2026, con una tesi sugli argomenti del premio. Se la tesi non riguarda la Valpolicella, il riassunto ne indica una possibile applicazione al territorio.</p>
+          <p><strong>Come partecipare:</strong> domanda in carta semplice per raccomandata o consegnata a mano all'Accademia di Agricoltura Scienze e Lettere di Verona, Via Leoncino 6, Palazzo Erbisti, 37121 Verona, con l'intestazione «XXIV Edizione Vivi la Valpolicella 2026 – Premio Internazionale Tesi di Laurea»; in alternativa per email a <span class="sel">zampini.s@tiscali.it</span>.</p>
+          <details class="docs">
+            <summary>Cosa allegare alla domanda</summary>
+            <ul>
+              <li>Dati del candidato (nome, nascita, residenza, codice fiscale, telefono, email) e titolo della tesi</li>
+              <li>Assenso alla divulgazione della sintesi o di parte della tesi da parte dell'associazione e autorizzazione al trattamento dei dati</li>
+              <li>Certificato di laurea con voto finale e sessione di discussione</li>
+              <li>2 copie cartacee della tesi firmate dal relatore e una chiavetta USB o CD con la tesi integrale in PDF</li>
+              <li>Un riassunto scientifico (Word o PDF) con le possibili applicazioni nell'areale della Valpolicella</li>
+              <li>Dichiarazione sull'eventuale pubblicazione, totale o parziale, della tesi</li>
+            </ul>
+            <p>I vincitori si impegnano a partecipare di persona alla cerimonia di premiazione.</p>
+          </details>
+          <p><strong>Responsabile e informazioni:</strong> Dott. Silvano Zampini, <span class="sel">zampini.s@tiscali.it</span>.</p>
         </div>
       </div>
     </div>
 
-    <div class="convegno">
+    <div class="convegno presenta">
+      <img src="img/presentazione-bando-2026.jpg" alt="Locandina della presentazione del bando di concorso Tesi di Laurea XXIV edizione 2026 al Vinitaly, 15 aprile 2026" loading="lazy">
+      <div class="prose">
+        <p class="eyebrow">Mercoledì 15 aprile 2026 · Vinitaly</p>
+        <h3 style="font-size:1.4rem;color:var(--ink)">Presentazione del bando 2026</h3>
+        <p>Il bando della XXIV edizione è stato presentato alle 11.30 allo stand della Cantina Valpolicella Negrar al Vinitaly di Verona (Padiglione 5, stand C3), insieme ai partner e alle istituzioni che sostengono il premio.</p>
+        <img src="img/vinitaly-2026.jpg" alt="La presentazione del bando allo stand della Cantina Valpolicella Negrar al Vinitaly 2026" loading="lazy" style="border-radius:2px;margin-top:6px">
+      </div>
+    </div>
+
+<div class="convegno">
       <img src="img/convegno-2024-locandina.jpg" alt="Locandina del convegno Il valore della ricerca per una nuova visione della Valpolicella, 10 dicembre 2024" loading="lazy">
       <div class="prose">
         <p class="eyebrow">Martedì 10 dicembre 2024</p>
@@ -538,6 +576,8 @@ dialog.lb button{background:#EEE9E0;color:#1F1B17;border:0;border-radius:999px;p
         <p>Nella Sala Convegni Domini Veneti della Cantina Valpolicella Negrar sono state presentate e premiate le migliori tesi di laurea nazionali vincitrici della XXII edizione. Accanto ai premiati, relatori dal mondo universitario ed enologico e le istituzioni del territorio.</p>
       </div>
     </div>
+
+    <figure class="wide-photo"><img src="img/premiazione-diplomi.jpg" alt="I premiati con i diplomi insieme agli organizzatori e ai partner del premio" loading="lazy"><figcaption>I premiati con i diplomi, insieme all'associazione e ai partner del premio</figcaption></figure>
 
     <div class="gallery" aria-label="Fotografie della premiazione 2024">
       <figure><img src="img/pomarici.jpg" alt="Il prof. Eugenio Pomarici interviene al convegno" loading="lazy"><figcaption>Prof. Eugenio Pomarici, Università di Padova</figcaption></figure>
@@ -696,7 +736,7 @@ dialog.lb button{background:#EEE9E0;color:#1F1B17;border:0;border-radius:999px;p
 
   // lightbox
   var lb=document.getElementById('lb'),li=document.getElementById('lbImg'),lc=document.getElementById('lbCap');
-  document.querySelectorAll('.premio-cover img,.gallery img,.convegno img,.map-fig img,.pub img,.im-photos img').forEach(function(im){
+  document.querySelectorAll('.premio-cover img,.gallery img,.convegno img,.wide-photo img,.map-fig img,.pub img,.im-photos img').forEach(function(im){
     im.style.cursor='zoom-in';
     im.addEventListener('click',function(){
       li.src=im.dataset.full||im.currentSrc||im.src;li.alt=im.alt;
