@@ -308,6 +308,17 @@ dialog.lb button{background:#EEE9E0;color:#1F1B17;border:0;border-radius:999px;p
 .docs ul{margin:10px 0 8px;padding-left:20px;display:grid;gap:4px}
 .convegno.presenta{align-items:start}
 @media (max-width:520px){.pdates div{grid-template-columns:1fr;gap:2px}}
+
+/* ---------- note stampa ---------- */
+.press-list{display:grid;gap:22px}
+.press-item{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:clamp(18px,3vw,28px)}
+.press-item figure{margin:0}
+.press-item img{width:100%;border:1px solid var(--line);background:#fff;cursor:zoom-in;border-radius:2px}
+.press-meta{font-family:var(--display);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--amarone);font-weight:600}
+.press-item h3{font-size:clamp(1.25rem,2.4vw,1.6rem);margin:8px 0 12px;line-height:1.2}
+.press-item .prose{max-width:60ch}
+.press-item .btn.ghost{border-color:var(--ink);color:var(--ink)}
+@media (max-width:820px){.press-item{grid-template-columns:1fr}.press-item figure{max-width:420px}}
 </style>
 
 </head>
@@ -326,6 +337,7 @@ dialog.lb button{background:#EEE9E0;color:#1F1B17;border:0;border-radius:999px;p
       <a href="#premio">Premio di Laurea</a>
       <a href="#pubblicazioni">La mappa</a>
       <a href="#imagines">Imagines</a>
+      <a href="#stampa">Note stampa</a>
       <a class="cta" href="#contatti">Contatti</a>
     </nav>
   </div>
@@ -511,8 +523,8 @@ dialog.lb button{background:#EEE9E0;color:#1F1B17;border:0;border-radius:999px;p
   <div class="wrap">
     <div class="premio-grid">
       <figure class="premio-cover">
-        <img src="img/bando-2026-copertina.jpg" alt="Copertina del bando Premio Internazionale Tesi di Laurea Vivi la Valpolicella, XXIV edizione 2026" loading="lazy">
-        <figcaption>Bando della XXIV edizione, 2026.</figcaption>
+        <img src="img/convegno-premiazione-2026.jpg" alt="Locandina del convegno Il valore della ricerca per una nuova visione della Valpolicella: premiazione della XXIV edizione del Premio Internazionale Vivi la Valpolicella, venerdì 27 novembre 2026 ore 16.00, Sala Convegni Domini Veneti, Cantina Valpolicella Negrar" loading="lazy">
+        <figcaption>Convegno e premiazione della XXIV edizione: venerdì 27 novembre 2026, ore 16.00.</figcaption>
         <img src="img/bando-2026-regolamento.jpg" alt="Bando e regolamento completo del Premio Internazionale Tesi di Laurea 2026" loading="lazy">
         <figcaption>Bando e regolamento completi: tocca l'immagine per ingrandirla.</figcaption>
       </figure>
@@ -530,7 +542,7 @@ dialog.lb button{background:#EEE9E0;color:#1F1B17;border:0;border-radius:999px;p
           <div><dt>Premi</dt><dd>4 premi da € 1.000, uno per ambito, più il diploma dell'associazione</dd></div>
           <div><dt>Domande entro</dt><dd>30 settembre 2026</dd></div>
           <div><dt>Valutazione</dt><dd>entro il 30 novembre 2026</dd></div>
-          <div><dt>Premiazione</dt><dd>entro il 31 dicembre 2026, al convegno «Il valore della ricerca per una nuova visione della Valpolicella»</dd></div>
+          <div><dt>Premiazione</dt><dd>venerdì 27 novembre 2026, ore 16.00 — convegno «Il valore della ricerca per una nuova visione della Valpolicella», Sala Convegni Domini Veneti, Cantina Valpolicella Negrar, Via Ca’ Salgari 2, Negrar di Valpolicella</dd></div>
         </dl>
         <ul class="ambiti" aria-label="Ambiti del premio">
           <li><b>1</b><span>Economia e marketing</span></li>
@@ -643,6 +655,32 @@ dialog.lb button{background:#EEE9E0;color:#1F1B17;border:0;border-radius:999px;p
   <div class="cap"><div class="wrap"><span><span class="s-name">Autunno</span><br><span class="s-desc">l'oro delle foglie dopo la vendemmia</span></span><span class="s-cr">© Damolgraf Editore</span></div></div>
 </div>
 
+<!-- ============ NOTE STAMPA ============ -->
+<section class="section" id="stampa" aria-labelledby="h-stampa">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Note stampa</p>
+      <h2 id="h-stampa">Dicono di noi</h2>
+    </div>
+    <div class="press-list">
+      <article class="press-item">
+        <figure>
+          <img src="img/stampa-arena-2026-11-06.jpg" alt="Articolo de L’Arena del 6 novembre 2026, pagina 25: «Capitale italiana della cultura», Vivi La Valpolicella lancia l’idea" loading="lazy">
+        </figure>
+        <div>
+          <p class="press-meta">L’Arena · Venerdì 6 novembre 2026 · pag. 25</p>
+          <h3>«Capitale italiana della cultura». Vivi La Valpolicella lancia l’idea</h3>
+          <div class="prose">
+            <p>L’associazione compie 30 anni e li festeggia con un incontro dedicato alle prospettive di sviluppo della valle, con i riflettori su viabilità e turismo. Tra gli obiettivi, un progetto ambizioso annunciato dal presidente Gianfranco Damoli: candidare la Valpolicella a Capitale italiana della cultura per il 2030.</p>
+            <p style="font-size:.9rem;color:var(--muted)">Articolo firmato C.M.</p>
+          </div>
+          <p style="margin-top:16px"><a class="btn ghost" href="img/stampa-arena-2026-11-06.jpg" target="_blank" rel="noopener">Leggi l’articolo</a></p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- ============ SOSTIENI ============ -->
 <section class="support" aria-labelledby="h-sup">
   <div class="wrap">
@@ -736,7 +774,7 @@ dialog.lb button{background:#EEE9E0;color:#1F1B17;border:0;border-radius:999px;p
 
   // lightbox
   var lb=document.getElementById('lb'),li=document.getElementById('lbImg'),lc=document.getElementById('lbCap');
-  document.querySelectorAll('.premio-cover img,.gallery img,.convegno img,.wide-photo img,.map-fig img,.pub img,.im-photos img').forEach(function(im){
+  document.querySelectorAll('.premio-cover img,.press-item img,.gallery img,.convegno img,.wide-photo img,.map-fig img,.pub img,.im-photos img').forEach(function(im){
     im.style.cursor='zoom-in';
     im.addEventListener('click',function(){
       li.src=im.dataset.full||im.currentSrc||im.src;li.alt=im.alt;
